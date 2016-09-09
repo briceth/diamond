@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
     root to: "pages#home"
+    get 'search', to: 'activities#index'
 
   resources :activities, only: [:index] do
     resources :proposals
