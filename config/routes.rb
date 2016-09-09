@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'activities/index'
+
   devise_for :users
     root to: "pages#home"
 
   resources :activities, only: [:index] do
-    # resources :proposals
+    resources :proposals
   end
 end
 
