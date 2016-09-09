@@ -1,4 +1,31 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+
+// #search-form {
+//   height: 55px;
+//   border-radius: 20em;
+//   margin-right: 15px;
+//   margin-top: 50px;
+//   display: flex;
+//   align-items: center;
+// }
+
+.banner-new-york {
+  color: white;
+  text-align: center;
+  min-height: 90vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
