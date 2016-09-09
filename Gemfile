@@ -7,6 +7,7 @@ gem "simple_form"
 gem "autoprefixer-rails"
 gem "figaro"
 gem "redis"
+gem 'devise'
 
 
 source 'https://rails-assets.org' do
