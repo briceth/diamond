@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'proposals/index'
+
   get 'activities/index'
 
   devise_for :users
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
     get 'search', to: 'activities#index'
 
   resources :activities, only: [:index] do
-    resources :proposals
+    resources :proposals, only: [:index, :new, :create, :destroy]
   end
 end
 
