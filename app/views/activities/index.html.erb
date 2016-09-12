@@ -1,115 +1,129 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
 
-<div class="container">
-  <div class="row">
-
-    <div class="col-xs-12 col-sm-4">
-    <%#= link_to activity_proposals_path(@activity), class: "card-link" do %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'baseball.jpeg' %>);">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>sport</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <% @activities.each do |activity| %>
+        <div class="col-xs-12 col-sm-4">
+        <%= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'baseball.jpeg' %>);">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2>sport</h2>
+              <p>Very cool stuff, useful and smart</p>
+            </div>
+            <img class="card-user avatar" src="user.jpg">
+          </div>
+          <% end %>
         </div>
-        <img class="card-user avatar" src="user.jpg">
+      <% end %>
 
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'restaurant.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Restaurant</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+
+
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'cinema.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Cinéma</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'exposition.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Expos et Galeries</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'concert.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Concerts</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'theatre.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Théâtre</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'bars.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Bars</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'coffee.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Café</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+      <div class="col-xs-12 col-sm-4">
+        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'open.jpeg' %>);">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Ca vient d'ouvrir</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
+        <%# end %>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
