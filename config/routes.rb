@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'search', to: 'activities#index'
 
   resources :activities, only: [:index] do
-    resources :proposals, only: [:index, :new, :create, :destroy]
+    resources :proposals, only: [:index, :show, :new, :create, :destroy]
   end
 end
 
