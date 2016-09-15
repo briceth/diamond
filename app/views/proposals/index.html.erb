@@ -6,25 +6,30 @@
   <div class="container">
     <div class="row">
       <% @proposals.each do |proposal| %>
-        <%= link_to activity_proposal_path(@activity, proposal) do %>
           <div class="proposal">
             <div class='proposal-upvote'>
               <div class="proposal-arrow"></div>
               <div class='proposal-count'>95</div>
             </div>
             <div class='proposal-body'>
-                <%= proposal.subject %>
-                <%#= proposal.content %>
-                <%#= proposal.location %>
-                <%#= proposal.price %>
+                <h3><strong><%= proposal.subject %></strong></h3>
+                <br>
+                <%= proposal.content %>
+                <br>
+                <br>
+                <em><%= proposal.location %></em>
+                <br>
+                <p><%= proposal.price %> Dollars</p>
+
             </div>
             <ul class="list-inline proposal-controls hidden-sm hidden-xs">
-              <li><a href=""><i class="fa fa-heart"></i></a></li>
+            <%= link_to activity_proposal_path(@activity, proposal) do %>
+              <li><i class="fa fa-envelope-o"></i></li>
+              <% end %>
               <li><a href=""><i class="fa fa-share"></i></a></li>
               <li><a href=""><i class="fa fa-star"></i></a></li>
             </ul>
           </div>
-        <% end %>
       <% end %>
     </div>
   </div>

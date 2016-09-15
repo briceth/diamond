@@ -5,8 +5,8 @@
       <div class="people-list" id="people-list">
         <div class="retour">
         <% if @user = current_user %>
-            <%#= link_to "Retour", job_offer_job_applications_path(@job_application.job_offer), class:"backlink" %>
-         <% else %>
+            <%= link_to "Retour", activity_proposals_path, class:"backlink" %>
+         <%# else %>
             <%#= link_to "Retour", root_path, class:"backlink" %>
         <% end %>
         </div>
@@ -15,10 +15,10 @@
 
         </div>
 
-        <%# if @user = current_recruiter %>
+        <%# if @user = current_user %>
           <div class="people">
             <ul class="list-unstyled">
-            <h3 style="font-size: 20px">Your candidates</h3>
+            <h3 style="font-size: 20px">Your messages</h3>
             <%# @job_applications.each do |conversation| %>
               <%# if conversation.contact? %>
               <li class="liste-email">
