@@ -8,6 +8,13 @@ gem "autoprefixer-rails"
 gem "figaro"
 gem "redis"
 gem 'devise'
+gem 'js-routes', '~> 1.3'
+gem 'react-rails', '~> 1.8'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
