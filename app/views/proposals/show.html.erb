@@ -1,0 +1,81 @@
+<div class="wrapper-message">
+  <div class="messages">
+
+    <div class="clearfix">
+      <div class="people-list" id="people-list">
+        <div class="retour">
+        <% if @user = current_user %>
+            <%#= link_to "Retour", job_offer_job_applications_path(@job_application.job_offer), class:"backlink" %>
+         <% else %>
+            <%#= link_to "Retour", root_path, class:"backlink" %>
+        <% end %>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="search" class="search-list" />
+
+        </div>
+
+        <%# if @user = current_recruiter %>
+          <div class="people">
+            <ul class="list-unstyled">
+            <h3 style="font-size: 20px">Your candidates</h3>
+            <%# @job_applications.each do |conversation| %>
+              <%# if conversation.contact? %>
+              <li class="liste-email">
+
+                <%#= link_to conversation_job_application_path(conversation), class: "conversation-link" do %>
+                  <div class="card-candidate">
+                    <h4>
+                      <%#= conversation.candidate.first_name %> <%#= conversation.candidate.last_name %>
+                    </h4>
+                    <p class="job-title">
+                      <%#= conversation.job_offer.title %> - <span>applied <%#= time_ago_in_words(conversation.job_offer.created_at) %> ago</span>
+                    </p>
+
+                  </div>
+                <%# end %>
+              </li>
+              <%# end %>
+            <%#end %>
+            </ul>
+          </div>
+          <%# else %>
+          <div class="people">
+            <ul class="list-inline">
+            <%# @job_applications.each do |job_application| %>
+              <li class="liste-email">
+                <%#= link_to conversation_job_application_path(job_application) do %>
+                <div class="candidate-informations">
+                  <p><%#= job_application.job_offer.recruiter.email %> - <span id="status"><%#= job_application.messages.count %> messages</span></p>
+                </div>
+                <%# end %>
+              </li>
+            <%# end %>
+            </ul>
+          </div>
+        <%# end %>
+      </div>
+
+
+        <div class="chat">
+          <!-- <div class="chat-about">
+            <div class="chat-with">Chat with <%#= @job_applications.candidate.email %></div>
+            <div class="chat-num-messages">already <%#= @job_applications.messages.count %> messages</div>
+          </div> -->
+          <div class="chat-history">
+            <%# @job_application.messages.each do |message| %>
+                <div class="message <%#= message.user == current_user ? "align-right" : "align-left" %>">
+                  <p><%#= message.content %></p>
+                </div>
+            <%# end %>
+        </div>
+        <div class="chat-message">
+          <%#= simple_form_for [@job_application, @new_message] do |f| %>
+            <%#= f.input :content, as: :string, placeholder:"type your message", class:"placeholder-message", label: false %>
+            <%#= f.button :submit, class: "btn-send", style: "width: 200px;"%>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
