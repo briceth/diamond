@@ -10,5 +10,13 @@ Rails.application.routes.draw do
   resources :activities, only: [:index] do
     resources :proposals, only: [:index, :show, :new, :create, :destroy]
   end
+
+  resources :proposals, only: [] do
+    member do
+      post :upvote
+    end
+  end
+
+
 end
 

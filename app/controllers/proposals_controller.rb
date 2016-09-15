@@ -29,6 +29,15 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.find(params[:id])
   end
 
+  def upvote
+    @proposal = proposal.find(params[:id])
+    if current_user.voted_for? @proposal
+      current_user.unvote_for @proposal
+    else
+     current_user.up_votes @proposal
+    end
+  end
+
   private
 
   def set_activity
