@@ -25,7 +25,7 @@ render: function() {
     var that = this;
     $.ajax({
       type: 'POST',
-      url: Routes.upvote_proposal_path(this.props.proposal.id, { format: 'json' }),
+      url: Routes.proposal_upvote_path(this.props.proposal.id, { format: 'json' } ),
       success: function(data) {
         that.setState({ proposal: data });
       }

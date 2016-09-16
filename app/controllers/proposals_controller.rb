@@ -10,11 +10,6 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.find(params[:id])
   end
 
-  def new
-    @proposal = Proposal.new
-  end
-
-
   def create
     @proposal = Proposal.new(proposal_params)
     @proposal.activity = @activity #une proposal belongs to  activity_id
@@ -30,7 +25,7 @@ class ProposalsController < ApplicationController
   end
 
   def upvote
-    @proposal = proposal.find(params[:id])
+    @proposal = Proposal.find(params[:proposal_id])
     if current_user.voted_for? @proposal
       current_user.unvote_for @proposal
     else
@@ -40,9 +35,14 @@ class ProposalsController < ApplicationController
 
   private
 
+
   def set_activity
     @activity = Activity.find(params[:activity_id]) #on a besoin de choper l'activity_id car proposal est nesté dans activity
   end
+
+  # def set_proposal
+  #   @proposal = Proposal.find(params[:proposal_id])
+  # end
 
   def proposal_params
     params.require(:proposal).permit(:subject, :content, :location, :price, :activity_id)

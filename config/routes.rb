@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :proposals, only: [] do
-    member do
+
       post :upvote
-    end
+
   end
 
 
