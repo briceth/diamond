@@ -11,6 +11,7 @@ gem 'devise'
 gem 'js-routes', '~> 1.3'
 gem 'react-rails', '~> 1.8'
 gem 'acts_as_votable'
+gem 'faker'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-classnames'

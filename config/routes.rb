@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   get 'proposals/index'
 
   get 'activities/index'
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get 'search', to: 'activities#index'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 
   resources :activities, only: [:index] do
     resources :proposals, only: [:index, :show, :new, :create, :destroy]
