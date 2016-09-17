@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915161510) do
+ActiveRecord::Schema.define(version: 20160917150726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20160915161510) do
     t.datetime "updated_at",  null: false
     t.index ["activity_id"], name: "index_meetings_on_activity_id", using: :btree
     t.index ["user_id"], name: "index_meetings_on_user_id", using: :btree
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "user_id"
+    t.string   "action"
+    t.string   "notifiable_type"
+    t.integer  "notifiable_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -58,6 +69,9 @@ ActiveRecord::Schema.define(version: 20160915161510) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "picture"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -78,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160915161510) do
 
   add_foreign_key "meetings", "activities"
   add_foreign_key "meetings", "users"
+  add_foreign_key "notifications", "users"
   add_foreign_key "proposals", "activities"
   add_foreign_key "proposals", "users"
 end
