@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     root to: "pages#home"
     get 'search', to: 'activities#index'
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    post 'follow' => 'following_relationships#create'
+  end
 
   resources :activities, only: [:index] do
     resources :proposals, only: [:index, :show, :new, :create, :destroy]
