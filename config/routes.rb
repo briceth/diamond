@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
+
   get 'users/show'
 
   get 'proposals/index'
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-resources :notifications, only: [:index]
+  resources :notifications, only: [:index]
 
 end
 

@@ -37,8 +37,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <%= link_to notifications_path(current_user) do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "notifications") %>
               <% end %>
             </li>
             <li>
