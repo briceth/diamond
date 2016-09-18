@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :meetings
   has_many :activities, through: :meetings
+  has_many :proposals
   has_many :notifications, as: :recipient
 
   has_many :followed_user_relationships,
@@ -28,4 +29,27 @@ class User < ApplicationRecord
   #     puts user.picture
   #   end
   # end
+
+  def following? user
+    followed_user_ids.include? user.id
+  end
+
+  def follow user
+    followed_users << user
+  end
+
+  def unfollow user
+    followed_users.delete(user)
+  end
 end
+
+
+
+
+
+
+
+
+
+
+

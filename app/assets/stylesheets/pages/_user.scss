@@ -6,3 +6,19 @@
   align-items: center;
   position: relative;
 }
+.card-user {
+  height: 200px;
+}
+.container-user {
+  display: flex;
+}
+.info-user {
+  margin-left: 65px;
+  flex: 0 0 20%;
+}
+.proposal-user {
+  flex: 0 0 80%;
+}
+.list-inline {
+  text-decoration: none;
+}

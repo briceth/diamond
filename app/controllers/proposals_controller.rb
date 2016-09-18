@@ -14,6 +14,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params)
     @proposal.activity = @activity #une proposal belongs to  activity_id
+    @proposal.user = current_user
       if @proposal.save
         redirect_to activity_proposals_path
       else
@@ -26,7 +27,6 @@ class ProposalsController < ApplicationController
   end
 
   def upvote
-    # @proposal = Proposal.find(params[:id])
     if current_user.voted_for? @proposal
       current_user.unvote_for @proposal
     else
@@ -42,7 +42,7 @@ class ProposalsController < ApplicationController
   end
 
   def set_proposal
-    @proposal = Proposal.find(params[:proposal_id])
+    @proposal = Proposal.find(params[:id])
   end
 
   def proposal_params

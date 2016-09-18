@@ -14,3 +14,5 @@ password = "passwordpassword"
   puts "Welcome " + user.first_name if user.save
 end
 User.populate_picture!
+
+
