@@ -20,7 +20,9 @@
   <div class="container-user">
     <div class="info-user">
       <%= @user.first_name %><br>
-      <%= follow_button @user %>
+      <% if current_user.can_follow?(@user) %>
+        <%= follow_button @user %>
+      <% end %>
     </div>
     <div class="proposal-user">
       <%= react_component "ProposalList",
