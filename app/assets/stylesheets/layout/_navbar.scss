@@ -36,6 +36,7 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+  margin-right: 40px;
 }
 
 /* Navbar standard link */
@@ -83,7 +84,7 @@
   top: -2px;
   z-index: 1;
 }
-.navbar-wagon-search-input {
+.navbar-wagon-search-input-something {
   flex: 0 1 300px;
   transition: all 0.15s ease;
   line-height: 40px;
@@ -94,6 +95,9 @@
   padding: 0 10px;
   font-size: 14px;
   outline: none;
+  width: 350px;
+  margin-right: 371px;
+  margin-left: 102px;
 }
 .navbar-wagon-search-input:focus  {
   border: 1px solid #CCCCCC;
@@ -104,6 +108,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  margin-right: 40px;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;

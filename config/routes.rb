@@ -26,6 +26,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :proposals, only: [] do
+    collection do
+      get :autocomplete
+    end
+  end
+
   resources :notifications, only: [:index]
 
 end

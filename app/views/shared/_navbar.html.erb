@@ -8,12 +8,15 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+    <%= form_tag activity_proposals_path(current_user), method: :get do %>
+      <%= text_field_tag :q, nil, placeholder: "Search", class: "navbar-wagon-search-input-something" %>
+    <% end %>
+    <!-- <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>

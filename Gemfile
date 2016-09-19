@@ -13,6 +13,8 @@ gem 'react-rails', '~> 1.8'
 gem 'acts_as_votable'
 gem 'faker'
 gem 'paperclip'
+gem 'searchkick'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-classnames'

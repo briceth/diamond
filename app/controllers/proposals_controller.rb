@@ -3,7 +3,8 @@ class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:upvote]
 
   def index
-    @proposals = Proposal.all
+    query = params[:q].presence || "*" #check if the atribute or the variable is present or return the default index
+    @proposals = Proposal.search(query) #:q permet de garder l'index de départ par default
     @proposal = Proposal.new
   end
 
@@ -13,8 +14,8 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params)
-    @proposal.activity = @activity #une proposal belongs to  activity_id
-    @proposal.user = current_user
+    @proposal.activity = @activity #a proposal belongs to  activity_id
+    @proposal.user = current_user #a proposal belongs to the actual user
       if @proposal.save
         redirect_to activity_proposals_path
       else
@@ -32,6 +33,10 @@ class ProposalsController < ApplicationController
     else
      current_user.up_votes @proposal
     end
+  end
+
+  def autocomplete
+    render json:["test"]
   end
 
   private
