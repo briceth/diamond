@@ -14,6 +14,8 @@ gem 'acts_as_votable'
 gem 'faker'
 gem 'paperclip'
 gem 'searchkick'
+gem 'omniauth-facebook'
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-classnames'
