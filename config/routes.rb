@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'notifications/index'
 
-  get 'users/show'
+  # get 'users/show'
 
-  get 'proposals/index'
+  # get 'proposals/index'
 
-  get 'activities/index'
+  # get 'activities/index'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
     root to: "pages#home"
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index] do
     resources :proposals, only: [:index, :show, :new, :create, :destroy]
-  end
+end
 
   resources :proposals, only: [] do
     member do

@@ -19,10 +19,17 @@
   </div>
   <div class="container-user">
     <div class="info-user">
-      <%= @user.first_name %><br>
+      <% if user_signed_in? && current_user.facebook_picture_url %>
+        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/40x40" %>
+        <%= image_tag avatar_url, class: "avatar-bordered dropdown-toggle", height: 50, width: 50 %><br>
+        <% end %>
+     <p><%= @user.first_name %> <%= @user.last_name %></p>
       <% if current_user.can_follow?(@user) %>
         <%= follow_button @user %>
       <% end %>
+      <p>Ajouter une bio</p>
+      <%#= link_to "Ajouter une bio",  %>
+
     </div>
     <div class="proposal-user">
       <%= react_component "ProposalList",
