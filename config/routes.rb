@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'activities/index'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
     root to: "pages#home"
     get 'search', to: 'activities#index'
 

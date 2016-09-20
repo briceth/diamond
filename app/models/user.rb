@@ -21,14 +21,28 @@ class User < ApplicationRecord
 
   acts_as_voter
 
-  # def self.populate_picture!
-  #   all.each do |user|
-  #     avatar = JSON.load(open('http://uifaces.com/api/v1/random'))['image_urls']['epic']
-  #     user.picture = avatar
-  #     user.save
-  #     puts user.picture
-  #   end
-  # end
+  devise :omniauthable, omniauth_providers: [:facebook]
+
+  def self.find_for_facebook_oauth(auth)
+    user_params = auth.to_h.slice(:provider, :uid)
+    user_params.merge! auth.info.slice(:email, :first_name, :last_name)
+    user_params[:facebook_picture_url] = auth.info.image
+    user_params[:token] = auth.credentials.token
+    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+
+    user = User.where(provider: auth.provider, uid: auth.uid).first
+    user ||= User.where(email: auth.info.email).first # User did a regular sign up in the past.
+    if user
+      user.update(user_params)
+    else
+      user = User.new(user_params)
+      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.save
+    end
+
+    return user
+  end
+
 
   def following? user
     followed_user_ids.include? user.id
@@ -47,6 +61,14 @@ class User < ApplicationRecord
   end
 end
 
+  # def self.populate_picture!
+  #   all.each do |user|
+  #     avatar = JSON.load(open('http://uifaces.com/api/v1/random'))['image_urls']['epic']
+  #     user.picture = avatar
+  #     user.save
+  #     puts user.picture
+  #   end
+  # end
 
 
 

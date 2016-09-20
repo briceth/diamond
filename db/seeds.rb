@@ -9,8 +9,9 @@ password = "passwordpassword"
   user = User.new
   user.email = Faker::Internet.email
   user.password = password
-  user.first_name = Faker::Name.name
-  user.last_name = Faker::Name.name
+  user.first_name = Faker::Name.first_name
+  user.last_name = Faker::Name.last_name
+  user.avatar = Faker::Avatar.image("my-own-slug", "50x50")
   puts "Welcome " + user.first_name if user.save
 end
 User.populate_picture!
