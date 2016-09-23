@@ -1,0 +1,17 @@
+<!-- <div class="container"> -->
+  <div class="banner-proposal" style="background-image: url(<%= image_path 'baseball.jpeg' %>);">
+  </div>
+<!-- </div> -->
+<% if @proposals.empty? %>
+  <p>Please, make the first proposal</p>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#NewProposalModal">new</button>
+<% else %>
+  <div class="container">
+    <div class="row">
+    <%# @proposals.each do |proposal| %>
+      <%= react_component "ProposalList",
+      render(template: 'proposals/index.json.jbuilder'), prerender: true %> <!-- #SEO -->
+      <%# end %>
+    </div>
+  </div>
+<% end %>

@@ -3,10 +3,13 @@ class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:upvote]
 
   def index
-    query = params[:q].presence || "*" #check if the atribute or the variable is present or return the default index
-    @proposals = Proposal.search(query) #:q permet de garder l'index de départ par default
     @proposals = Proposal.all
     @proposal = Proposal.new
+  end
+
+  def search
+    query = params[:q].presence || "*" #check if the atribute or the variable is present or return the default index
+    @proposals = Proposal.search(query) #:q permet de garder l'index de départ par default
   end
 
   def show

@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   # get 'activities/index'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-    root to: "pages#home"
-    get 'search', to: 'activities#index'
+  root to: "pages#home"
 
   resources :users, only: [:index, :show, :edit, :update] do
     post 'follow' => 'following_relationships#create'
@@ -18,18 +17,12 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index] do
     resources :proposals, only: [:index, :show, :new, :create, :destroy]
-end
+    get '/proposals/search' => 'proposals#search', on: :collection #on cherche toutes les proposals de toutes les activitiés
+  end                                                              #en arrivant sur une page spécifique
 
   resources :proposals, only: [] do
-    member do
-      post :upvote
-    end
-  end
-
-  resources :proposals, only: [] do
-    collection do
-      get :autocomplete
-    end
+    post :upvote, on: :member
+    get :autocomplete, on: :collection
   end
 
   resources :notifications, only: [:index]

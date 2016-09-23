@@ -1,4 +1,4 @@
-json.extract! proposal, :subject, :content, :location, :price, :url, :id
+json.extract! proposal, :subject, :content, :location, :price, :url, :id, :activity_id
 
 
 json.up_votes proposal.votes_for.count

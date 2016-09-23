@@ -4,126 +4,18 @@
 
       <% @activities.each do |activity| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'baseball.jpeg' %>);">
+          <%= link_to activity_proposals_path(activity) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "#{activity.category}.jpeg" %>);">
             <div class="card-category">Popular</div>
             <div class="card-description">
-              <h2>sport</h2>
+              <h2><%= activity.category %></h2>
               <p>Very cool stuff, useful and smart</p>
             </div>
             <!-- <img class="card-user avatar" src="user.jpg"> -->
           </div>
           <% end %>
         </div>
-
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'restaurant.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Restaurant</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <% end %>
-      </div>
-
-
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'cinema.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Cinéma</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'exposition.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Expos et Galeries</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'concert.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Concerts</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'theatre.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Théâtre</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-         <!--  <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'bars.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Bars</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'coffee.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Café</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%#= link_to activity_proposals_path(activity), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'open.jpeg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Ca vient d'ouvrir</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <!-- <img class="card-user avatar" src="user.jpg"> -->
-        </div>
-        <%# end %>
-      </div>
       <% end %>
-   <!--  </div> -->
   </div>
 </div>
+

@@ -13,13 +13,8 @@ var ProposalListItem = React.createClass({
           <p>{this.props.proposal.location}</p>
           <p>{this.props.proposal.price}</p>
         </div>
-        // <div className="proposal-controls">
-        //   <div className="proposal-control">
-        //     <div className="user-badge-container ">
-        //
-        //     </div>
-        //   </div>
-        // </div>
+
+        <a href={Routes.activity_proposal_path(this.props.proposal.activity_id, this.props.proposal.id)}>Join the discussion</a>
       </div>
     );
   }

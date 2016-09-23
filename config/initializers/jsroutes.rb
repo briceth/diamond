@@ -4,7 +4,7 @@ JsRoutes.setup do |config|
   #       rake tmp:cache:clear
   #       before restarting your `rails s`.
   config.include = [
-    /^upvote_proposal$/
+    /proposal/
   ]
 end
 

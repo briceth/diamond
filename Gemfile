@@ -15,7 +15,7 @@ gem 'faker'
 gem 'paperclip'
 gem 'searchkick'
 gem 'omniauth-facebook'
-
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-classnames'

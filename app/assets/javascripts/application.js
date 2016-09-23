@@ -1,7 +1,9 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require react
 //= require react_ujs
+//= require js-routes
 //= require components
 //= require_tree .
