@@ -9,7 +9,7 @@ class ProposalsController < ApplicationController
 
   def search
     query = params[:q].presence || "*" #check if the atribute or the variable is present or return the default index
-    @proposals = Proposal.search(query) #:q permet de garder l'index de départ par default
+    @proposals = Proposal.search(query, suggest: true) #:q permet de garder l'index de départ par default
   end
 
   def show
@@ -40,7 +40,12 @@ class ProposalsController < ApplicationController
   end
 
   def autocomplete
-    render json:["test"]
+    render json: Proposal.search(params[:term], {
+      fields: [{subject: :text_start}],
+      limit: 6,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:title)
   end
 
   private

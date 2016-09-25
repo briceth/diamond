@@ -22,7 +22,12 @@ Rails.application.routes.draw do
 
   resources :proposals, only: [] do
     post :upvote, on: :member
-    get :autocomplete, on: :collection
+  end
+
+  resources :proposals, only: [] do
+    collection do
+      get :autocomplete
+    end
   end
 
   resources :notifications, only: [:index]

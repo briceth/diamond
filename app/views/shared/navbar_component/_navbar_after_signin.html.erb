@@ -6,7 +6,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+  <!-- la navbar est sur toute les pages donc ce n'est pas la même route -->
     <%= form_tag proposals_search_activities_path, method: :get do %>
       <%= text_field_tag :q, nil, placeholder: "Search", class: "navbar-wagon-search-input-something" %>
     <% end %>
