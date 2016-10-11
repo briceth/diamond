@@ -6,6 +6,9 @@ gem "font-awesome-sass"
 gem "simple_form"
 gem "autoprefixer-rails"
 gem "figaro"
+gem 'cloudinary'
+gem "attachinary"
+gem "jquery-fileupload-rails"
 gem "redis"
 gem 'devise'
 gem 'js-routes', '~> 1.3'

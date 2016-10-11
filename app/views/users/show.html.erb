@@ -1,6 +1,6 @@
 <!-- <div class="wrapper"> -->
   <div class="container">
-    <div class="banner-user" style="background-image: url(<%= image_path 'new-york.jpeg' %>);">
+    <div class="banner-user" style="background-image: url('<%#= cloudinary_url @user.photo.path %>');">
       <div class="tabs">
         <a class="tab active" href="#">
           <h3><%#= @user.followers.count %></h3>
@@ -28,7 +28,15 @@
         <%= follow_button @user %>
       <% end %>
       <p>Ajouter une bio</p>
-      <%#= link_to "Ajouter une bio",  %>
+      <%= link_to 'edit your info', edit_user_path %>
+      <%#= simple_form_for @user do |f| %>
+        <%#= f.input :photo, as: :attachinary %>
+      <%# end %>
+
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path %>
+      <% end %>
+
 
     </div>
     <div class="proposal-user">

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_attachment :photo
   has_many :meetings
   has_many :activities, through: :meetings
   has_many :proposals
