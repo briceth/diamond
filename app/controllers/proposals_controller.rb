@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:upvote]
 
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.where(activity_id: @activity)
     @proposal = Proposal.new
   end
 

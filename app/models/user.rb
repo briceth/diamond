@@ -60,6 +60,10 @@ class User < ApplicationRecord
   def can_follow? user
     self != user
   end
+
+  def can_upload? user
+    self == user
+  end
 end
 
   # def self.populate_picture!
