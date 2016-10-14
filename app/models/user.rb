@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_attachments :photos, maximum: 2
 
+  has_many :events
   has_many :meetings
   has_many :activities, through: :meetings
   has_many :proposals

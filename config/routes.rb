@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
   mount Attachinary::Engine => "/attachinary"
   get 'notifications/index'
 
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
   end
 
   resources :notifications, only: [:index]
+
+  resources :events, only: [:index]
 
 end
 

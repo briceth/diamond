@@ -1,6 +1,9 @@
 class Proposal < ApplicationRecord
+  attr_reader :subject
+
   belongs_to :activity
   belongs_to :user
+  has_many :events
 
   acts_as_votable
 
@@ -12,4 +15,5 @@ class Proposal < ApplicationRecord
       location: location
     }
   end
+
 end
