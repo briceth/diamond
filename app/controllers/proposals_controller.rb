@@ -21,7 +21,7 @@ class ProposalsController < ApplicationController
     @proposal.activity = @activity #a proposal belongs to  activity_id
     @proposal.user = current_user #a proposal belongs to the actual user
       if @proposal.save
-        current_user.events.create(action: "propose un", eventable: @activity)
+        current_user.events.create(action: "propose", eventable_type: @proposal.subject, eventable_id: @activity.id)
         redirect_to activity_proposals_path
       else
         render :new

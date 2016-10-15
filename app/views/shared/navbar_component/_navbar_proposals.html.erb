@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
   <!-- la navbar est sur toute les pages donc ce n'est pas la même route -->
     <%= form_tag proposals_search_activities_path, method: :get do %>
-      <%= text_field_tag :q, nil, placeholder: "Recherchez sur Diamond", class: "navbar-wagon-search-input-something" %>
+      <%= text_field_tag :q, nil, placeholder: "Recherchez sur Diamond", class: "navbar-wagon-search-input-something-proposals" %>
     <% end %>
 
     <!-- <form action="" class="navbar-wagon-search">
@@ -21,7 +21,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-    <%= link_to 'Feed', events_path %>
+    <%= link_to 'Feed', events_path, class: "event-button" %>
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
@@ -55,6 +55,8 @@
           </ul>
         </div>
       </div>
+       <!-- Button (call-to-action) -->
+      <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#NewProposalModal">Proposal</button>
 
     <% else %>
 
@@ -77,4 +79,5 @@
     </div>
   </div>
 </div>
+
 

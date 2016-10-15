@@ -1,5 +1,4 @@
 class Proposal < ApplicationRecord
-  attr_reader :subject
 
   belongs_to :activity
   belongs_to :user
