@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:upvote]
 
   def index
+    @proposal_picture = Activity.find(params[:activity_id])
     @proposals = Proposal.where(activity_id: @activity)
     @proposal = Proposal.new
   end
