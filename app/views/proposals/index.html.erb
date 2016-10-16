@@ -1,4 +1,5 @@
-<div class="banner-proposal" style="background-image: url(<%= image_path "#{@proposal_picture.category}.jpeg" %>);">
+<div class="banner-proposal container" style="background-image: url(<%= image_path "#{@proposal_picture.category}.jpeg" %>);">
+  <h1><%= @proposal_picture.category %></h1>
 </div>
 
 <% if @proposals.empty? %>

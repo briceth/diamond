@@ -21,7 +21,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-    <%= link_to 'Feed', events_path %>
+    <%= link_to 'Feed', events_path, class: "event-button" %>
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
