@@ -2,11 +2,11 @@
   <div class="navbar-wagon-home">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <h4>Diamond</h4>
+      <h4 class="fadeInDown">Diamond</h4>
     <% end %>
-    <%= link_to about,  %>
+    <%#= link_to about,  %>
     <!-- Right Navigation -->
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <div class="navbar-wagon-right hidden-xs hidden-sm fadeInDown">
         <!-- Login text link -->
         <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     </div>
@@ -15,9 +15,9 @@
 
 <div class="banner-new-york" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'new-york.jpg' %>);">
   <div class="banner-content">
-    <h1>Find your Buddies</h1>
-    <p>in New-york</p>
-    <div class="button">
+    <h1 class="animated fadeInDown">Find your Buddies</h1>
+    <p class="animated fadeInDown">in New-york</p>
+    <div class="button animated fadeInUp">
       <p>
         <%= link_to "Press to start", activities_path, id: "search-form", class: "styled-btn" %>
       </p>

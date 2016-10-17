@@ -1,12 +1,3 @@
-
-// #search-form {
-//   height: 55px;
-//   border-radius: 20em;
-//   margin-right: 15px;
-//   margin-top: 50px;
-//   display: flex;
-//   align-items: center;
-// }
 .navbar-wagon-home {
   position: fixed;
   display: flex;
@@ -14,8 +5,42 @@
   width: 100%;
   height: 50px;
   z-index: 99;
-  background-color: white;
+  background-color: rgba(0,0,0,0);
 }
+.navbar-wagon-home h4 {
+  color: white;
+  padding-left: 10px;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.6s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.6s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 0.6s;
+  -o-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-iteration-count: 1;
+}
+.navbar-wagon-right {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.6s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.6s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 0.6s;
+  -o-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-iteration-count: 1;
+}
+.navbar-wagon-item {
+  color: white;
+}
+
 .banner-new-york {
   color: white;
   text-align: center;
@@ -40,6 +65,49 @@
 }
 
 .banner-section {
-  height: 250px;
-  background-color: blue;
+  min-height: 250px;
+  background-color: white;
+}
+
+.banner-content h1 {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.6s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.6s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 0.6s;
+  -o-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-iteration-count: 1;
+}
+.banner-content p {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 1s;
+  -o-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+}
+.button {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1.5s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 1.5s;
+  -o-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-iteration-count: 1;
 }
