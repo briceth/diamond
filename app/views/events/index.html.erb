@@ -2,7 +2,9 @@
   <div class="col-md-4 col-md-offset-4">
     <% if @events.any? %>
       <% @events.each do |event| %>
-        <%= render partial: event.action, locals: {event: event} %> <!-- #locals =>sinon message d'erreur de rails, il ne connait pas event-->
+        <% if lookup_context.template_exists?(event.action, "events", true) %>
+          <%= render partial: event.action, locals: {event: event} %> <!-- #locals =>sinon message d'erreur de rails, il ne connait pas event-->
+        <% end %>
       <% end %>
     <% end %>
   </div>

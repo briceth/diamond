@@ -4,6 +4,7 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <h4>Diamond</h4>
     <% end %>
+    <%= link_to about,  %>
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
         <!-- Login text link -->
@@ -24,84 +25,17 @@
   </div>
 </div>
 
-<!-- <div class="homepage-hero-module">
-    <div class="video-container">
-        <div class="filter"></div>
-        <video autoplay loop class="fillWidth">
-            <source src="app/assets/MP4/New-York-Jam.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="app/assets/WEBM/New-York-Jam.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <div class="poster hidden">
-            <img src="app/assets/New-York-Jam/New-York-Jam.jpg" alt="">
-        </div>
-    </div>
+<div class="banner-section">
+  <h1>About</h1>
 </div>
- -->
-<!-- <script>
-  //jQuery is required to run this code
-$( document ).ready(function() {
 
-    scaleVideoContainer();
+<div class="banner-new-york" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'couple.jpeg' %>);"></div>
 
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
+<div class="banner-section">
+  <h1>How it works</h1>
+</div>
 
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
-
-});
-
-function scaleVideoContainer() {
-
-    var height = $(window).height() + 5;
-    var unitHeight = parseInt(height) + 'px';
-    $('.homepage-hero-module').css('height',unitHeight);
-
-}
-
-function initBannerVideoSize(element){
-
-    $(element).each(function(){
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
-    });
-
-    scaleBannerVideoSize(element);
-
-}
-
-function scaleBannerVideoSize(element){
-
-    var windowWidth = $(window).width(),
-    windowHeight = $(window).height() + 5,
-    videoWidth,
-    videoHeight;
-
-    console.log(windowHeight);
-
-    $(element).each(function(){
-        var videoAspectRatio = $(this).data('height')/$(this).data('width');
-
-        $(this).width(windowWidth);
-
-        if(windowWidth < 1000){
-            videoHeight = windowHeight;
-            videoWidth = videoHeight / videoAspectRatio;
-            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-
-            $(this).width(videoWidth).height(videoHeight);
-        }
-
-        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-    });
-}
-</script> -->
+<div class="banner-new-york" style=" background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'broadway.jpeg' %>);""></div>
 
 
 

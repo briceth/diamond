@@ -2,5 +2,5 @@
   <%= link_to event.user.first_name || event.user.email, user_path(event.user) %>
   <%= event.action %> un
   <strong><%= event.eventable_type %></strong>
-   - <em><%= time_ago_in_words(event.created_at) %></em>
+   - <em><%= time_ago_in_words(event.created_at) %> ago</em>
 </div>
