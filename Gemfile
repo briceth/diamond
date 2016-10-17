@@ -20,6 +20,11 @@ gem 'searchkick'
 gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 
+gem 'sidekiq'
+gem 'sidekiq-failures'
+
+gem 'sinatra', ">= 2.0.0.beta2", require: false
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-classnames'
 end
