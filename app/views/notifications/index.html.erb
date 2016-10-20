@@ -1,5 +1,12 @@
-<h2>Notifications</h2>
-
-<div id="notifications">
-  <div><%= notification.user.email %> <%= notification.action %> you!</div>
+<div class="container-feed">
+  <div class="col-md-4 col-md-offset-4">
+    <%# if @notifications.any? %>
+      <%# @notifications.each do |notification| %>
+      <div id="notifications">
+      </div>
+        <%#= render partial: "notifications/#{notification.notifiable_type.underscore.pluralize}/#{notification.action}", locals: {notification: notification}, formats:[:html] %>
+      <%# end %>
+    <%# end %>
+  </div>
 </div>
+
