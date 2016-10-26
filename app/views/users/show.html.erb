@@ -29,7 +29,7 @@
       <% if current_user.can_follow?(@user) %>
         <%= follow_button @user %>
       <% end %>
-      <p>Ajouter une bio</p>
+      <p><%= @user.bio %></p>
       <% if current_user.can_upload?(@user) %>
         <%= link_to 'edit your info', edit_user_path %>
       <% end %>
